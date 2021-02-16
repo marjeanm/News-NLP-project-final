@@ -1,12 +1,35 @@
-form {
-    border: 1px solid #545454;
-    border-radius: 3px;
-    padding: 40px;
-}
+main {
+    .form-style,
+    .form-wrapper,
+    .translate {
+      display: flex;
+      justify-content: center;
+    }
+    input[type="text"] {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid black;
+      width: 100%;
+      padding: 15px;
+    }
+    input[type="submit"] {
+      margin: 15px;
+      padding: 8px;
+      background: #df744a;
+      color: white;
+      width: 100%;
+    }
 
-input {
-    padding: 5px 20px;
-    width: 100%;
-    line-height: 16px;
-    margin: 10px 0;
-}
+    .form {
+      width: 87%;
+      margin-top: 83px;
+    }
+    .Translate {
+      border-bottom: 1px solid grey;
+      -webkit-box-shadow: 2px 2px 3px 4px rgba(0, 0, 0, 0.48);
+      box-shadow: 2px 2px 3px 4px rgba(0, 0, 0, 0.48);
+      margin: auto;
+      padding: 50px;
+      background-color: #fedcd2;
+    }
+  }

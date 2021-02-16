@@ -1,4 +1,4 @@
-let projectData= [];
+
 
 var path = require('path')
 const express = require('express')
@@ -47,6 +47,8 @@ app.post('/api',(request,response)=> {
  sentiment['agreement'] =data.agreement;
  sentiment['confidence'] =data.confidence;
 sentiment['irony'] = data.irony;
+sentiment['credits']=data.status.remaining_credits;
+
  response.send(sentiment);
 })
 

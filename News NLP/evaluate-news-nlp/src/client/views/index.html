@@ -1,43 +1,59 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
+<body>
+
+    <header>
+      <div class="main-header">
+        <h1>Evaluate News-NLP</h1>
+      </div>
+      <div class="navbar">
+        <ul class="subMenu">
+          <li>Home</li>
+          <li>Translate</li>
+          <li>Announcement Board</li>
+          <li>Admin Docs</li>
+          <li>Changes to Our templates</li>
+        </ul>
+  
+      </div>
+    </header>
+  
+    <main>
+      <section class="form-style">
+        <form  id = "form" name = "myForm" class="form" onsubmit="return Client.handleSubmit(event)">
+          <input id="name" type="text" name="input" value="" placeholder="Name">
+          <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+        </form>
+      </section>
+  
+      <section class="Translate">
+        <div class="upper">
+            <strong>Form Results:</strong>
+        <div class="results"><p>Agreement :<span id="results"><span></p> </div>
+        <div class="confidence">Confidence: <span id="confidence"><span></p> </div>
+        <div >Irony: <span id="irony"><span></p> </div>
         
-        
-    </head>
-
-    <body>
-
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
-
-        <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value=""  placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-            </section>
-
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-                <div id="confidence"></div>
-                <div id="irony"></div>
-                <div id="polarity"></div>
-            </section>
-        </main>
-
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-
-    </body>
-</html>
+    </div>
+      </section>
+    </main>
+  
+    <footer class="footer-wrapper">
+      <div class="footer-msg">
+        <p>
+          💞
+          One day can change your life.
+          One day can ruin your life. All life is is three or four big days that change everything. By<author>Marjean Mayo-Baker</author>
+        </p>
+        </p>
+  
+      </div>
+  
+    </footer>
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/service-worker.js');
+          });
+      }
+     </script>
+  </body>

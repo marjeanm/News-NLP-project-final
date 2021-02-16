@@ -33,7 +33,7 @@ function handleSubmit(event) {
        document.getElementById('results').innerHTML = res.agreement
        document.getElementById('confidence').innerHTML = res.confidence
        document.getElementById('irony').innerHTML = res.irony
-       
+      
      
        console.log(res.agreement)
        console.log(res.confidence)
@@ -41,7 +41,25 @@ function handleSubmit(event) {
       
     })
 
-}
+    function validateForm(){
+        let validate = document.forms["myForm"]["input"].value;
+        let myRegexe = /(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/i;
+        let result = myRegexe.test(validate)
+        if (result === true) {
+            document.getElementById('name').style.border ="thick solid green";}
+                        
+            else {
+                document.getElementById("name").style.border = "thick solid red";
+                alert("valid Url's only");
+                document.getElementById("form").reset();
+              }
+            }
+            validateForm();
+        }
+
+
+
+
     
    // console.log("::: Form Submitted :::")
 
