@@ -144,9 +144,17 @@ function handleSubmit(event) {
     
     let formText = document.getElementById('name').value
    //Client.checkForName(formText)
-
-
-   postData('http://localhost:8081/api', {txt: formText})
+ // form validation
+ let validate = document.forms["myForm"]["input"].value;
+        let myRegexe = /(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/i;
+        let result = myRegexe.test(validate)
+        if (result === true) {
+            document.getElementById('name').style.border ="thick solid green";
+         
+        
+       
+            
+   postData('http://localhost:8081/api', {txt: formText})   
    .then(function(res){
        document.getElementById('results').innerHTML = res.agreement
        document.getElementById('confidence').innerHTML = res.confidence
@@ -158,23 +166,10 @@ function handleSubmit(event) {
        console.log(res.irony)
       
     })
-
-    function validateForm(){
-        let validate = document.forms["myForm"]["input"].value;
-        let myRegexe = /(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/i;
-        let result = myRegexe.test(validate)
-        if (result === true) {
-            document.getElementById('name').style.border ="thick solid green";}
-                        
-            else {
-                document.getElementById("name").style.border = "thick solid red";
-                alert("valid Url's only");
-                document.getElementById("form").reset();
-              }
-            }
-            validateForm();
-        }
-
+} else {
+alert("please enter valid URL");
+}
+}
 
 
 
