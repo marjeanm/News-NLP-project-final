@@ -1,0 +1,57 @@
+<body>
+
+    <header>
+      <div class="main-header">
+        <h1>Evaluate News-NLP</h1>
+      </div>
+      <div class="navbar">
+        <ul class="subMenu">
+          <li>Home</li>
+          <li>Translate</li>
+          <li>Announcement Board</li>
+          <li>Admin Docs</li>
+          <li>Changes to Our templates</li>
+        </ul>
+  
+      </div>
+    </header>
+  
+    <main>
+      <section class="form-style">
+        <form  id = "form" name = "myForm" class="form" onsubmit="return Client.handleSubmit(event)">
+          <input id="name" type="text" name="input" value="" placeholder="URL" required>
+          <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+        </form>
+      </section>
+  
+      <section class="Translate">
+        <div class="upper">
+            <strong>Form Results:</strong>
+        <div class="results"><p>Agreement :<span id="results"><span></p> </div>
+        <div class="confidence">Confidence: <span id="confidence"><span></p> </div>
+        <div >Irony: <span id="irony"><span></p> </div>
+        
+    </div>
+      </section>
+    </main>
+  
+    <footer class="footer-wrapper">
+      <div class="footer-msg">
+        <p>
+          Made with 💞        
+        
+        </p>
+  
+      </div>
+  
+    </footer>
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/service-worker.js');
+          });
+      }
+     </script>
+  </body>

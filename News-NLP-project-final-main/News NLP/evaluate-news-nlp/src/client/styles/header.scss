@@ -1,0 +1,20 @@
+$sub-background: #8fd8d2;
+$sub-box-shadow: black;
+
+header {
+  background: $sub-background;
+  .main-header {
+    display: flex;
+    justify-content: center;
+  }
+  .navbar {
+    .subMenu {
+      flex-direction: row;
+      display: flex;
+      justify-content: space-around;
+      list-style-type: none;
+      padding: 25px;
+      box-shadow: 2px 8px 10px -5px $sub-box-shadow;
+    }
+  }
+}

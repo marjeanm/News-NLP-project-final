@@ -1,0 +1,19 @@
+$border-bottom:grey;
+$translate-color:#fedcd2;
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  flex: 2;
+  section {
+    max-width: 800px;
+    margin: 50px auto;
+  }
+  .Translate {
+    border-bottom: 1px solid $border-bottom;
+    width: 50%;
+    padding: 50px;
+    background-color: $translate-color;
+  }
+}
